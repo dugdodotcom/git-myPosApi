@@ -11,15 +11,18 @@ Rails.application.routes.draw do
                sessions: 'sessions',
                registrations: 'registrations'
              }
-
-  # devise_scope :user do
-  #   post 'api/v1/signup', to: 'api/v1/registrations#create'
-  # end
-  root 'item#index'
-
+  
+  # versioning for api. Lets say v1 is for normal REST. 
+  # And v2 using graphql for future development.
   namespace :api do
     namespace :v1 do
-      
+
+      # For testing first authentication
+      resources :users, only: [] do
+        collection do
+          get :me
+        end
+      end
     end
   end
 end

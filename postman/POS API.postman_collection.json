@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "9708688b-253b-4379-9e52-3d9f2b33b1e4",
+		"name": "POS API",
+		"description": "This is for POS Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sign Up/ Log in",
+			"item": [
+				{
+					"name": "Sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user[email]",
+									"value": "user@example.com",
+									"type": "text"
+								},
+								{
+									"key": "user[password]",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/signup",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user[email]",
+									"value": "user@example.com",
+									"type": "text"
+								},
+								{
+									"key": "user[password]",
+									"value": "password"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/login",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log out",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{api_url}}/logout",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "me",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTM4NTQ2ODc2LCJleHAiOjE1Mzg2MzMyNzYsImp0aSI6ImJhNzRlYjQ5LWQzNjYtNDgyOS1iNWZiLTZkYWY3NTE2N2FmMCJ9.2LTtLmSPeWPGazoOlmbrXk1Gck3dbck_1ERslOYErFA"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{api_url}}{{ver}}/users/me",
+							"host": [
+								"{{api_url}}{{ver}}"
+							],
+							"path": [
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
