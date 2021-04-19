@@ -50,12 +50,35 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :test do 
+  gem 'database_cleaner'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'webmock'
+  gem 'vcr'
+  gem 'delorean'
+end
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # for auth
 gem 'devise'
-gem 'devise-jwt'
+gem "doorkeeper", "~> 5.0"
 gem 'rack-cors'
 gem 'cancancan'
+
+# for make url slug
+gem 'friendly_id'
+
+# for serializer
+gem 'active_model_serializers'
+
+# for image upload
+gem "paperclip", "~> 6.0.0"
+
+gem 'omniauth'
+gem 'omniauth-instagram'
+gem 'omniauth-facebook'
+gem 'koala'

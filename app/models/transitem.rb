@@ -1,0 +1,2 @@
+class Transitem < ApplicationRecord
+end
