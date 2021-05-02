@@ -29,7 +29,11 @@ Rails.application.routes.draw do
       end
 
       resources :categories
-      resources :items
+      resources :items, only: [] do
+        collection do
+          get '/by-category/:id', to: 'items#by_category'
+        end
+      end
 
       resources :settings, only: [:index, :create]
     end

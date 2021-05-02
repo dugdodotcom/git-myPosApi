@@ -28,6 +28,13 @@ class Api::V1::ItemsController < ApplicationController
     render_resource(@item)
   end
 
+  def by_category
+    @category = Category.friendly.find(params[:id])
+    @items = @category.items.where(deleted: false).order(id: :desc)
+    authorize! :index, @items
+    render json: @items
+  end
+
   def update
     authorize! :update, @item
     @item.update(update_item_params)
